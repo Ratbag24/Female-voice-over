@@ -1,12 +1,11 @@
-# Recording script
+# Recording scripts
 
-Sixty short lines, with the tone each one wants and the filename to save it as.
+Four voice packs, each a different character. Every pack covers the same thirteen events, so a
+pack can be recorded and released on its own.
 
-Nothing here is fixed. Every event works with as few as one clip, and an event with no
-recordings simply stays silent, so skipping lines or rewording them costs nothing.
-
-There is a version of this script formatted for reading off a phone while recording, with
-tick-boxes to track progress. Ask whoever set this up for the link.
+Nothing here is fixed. Every event works with as few as one clip, and an event with no clip
+simply stays silent, so skipping lines or rewording them costs nothing. A line the actor
+improvises in the booth beats one written here.
 
 ## Before you start
 
@@ -14,220 +13,134 @@ tick-boxes to track progress. Ask whoever set this up for the link.
 | --- | --- |
 | **Format** | `.wav`, 16-bit PCM, 44100 Hz, mono. Most recorders call this CD quality. Not MP3 — it will not play. |
 | **Length** | Under four seconds a line. Shorter is better. |
-| **Level** | Same distance from the mic and the same level for every line, start to finish. There is one volume control for all sixty, so a quietly recorded line stays quiet. |
+| **Level** | Same distance from the mic and the same level for every line, start to finish. There is one volume control for the whole pack, so a quietly recorded line stays quiet. |
 | **Trim** | Cut the silence off the front of each file. Dead air at the start is what makes this kind of plugin feel broken. |
-| **Naming** | Name each file after its line: `death-01.wav`, `quest-03.wav`. |
-| **Sending** | All in one batch. Folders are not needed; they get sorted on the other end. |
+| **Naming** | Anything legible. `death-01.wav`, `flirty-death-1.wav` — whatever is easy, as long as the event is in the name. |
+| **Sending** | All in one batch. Folders are not needed. |
 
-One thing worth knowing before the first take: these play hundreds of times. The lines that
-survive that are the under-played ones — small, warm, unhurried. A big performance is funny
-twice and grating by the tenth time it fires. Keep almost everything low-key; the pet lines are
-the one place to let go.
+**Record one pack end to end rather than a few lines of each.** One complete pack ships; four
+half-packs ship nothing.
 
-## Filing clips by hand
+**Death is heard roughly ten times more often than anything else.** It gets five lines in every
+pack and deserves the most takes. A weak death line sinks a pack on its own.
 
-Only needed if you are installing them yourself rather than sending them on. Drop each clip into
-the folder named in its heading below, under `~/.runelite/female-voiceover/` (Windows:
-`%USERPROFILE%\.runelite\female-voiceover\`), then type `::vo reload` in game. `::vo test death`
-auditions a take.
+## Which events exist
 
----
+Listed in the order they appear in each pack below. The folder name matters only when filing
+clips by hand; see [AUDIO.md](AUDIO.md).
 
-# Sitting one — the three you hear constantly
-
-Nineteen lines, about fifteen minutes. The plugin is worth using with only these recorded.
-
-## `death` — heard constantly
-
-Fires on every death, including safe ones.
-
-> In game: `Oh dear, you are dead!`
-
-Dry, a little sympathetic, never gloating. The most-heard line by a wide margin, so keep it
-small: a raised eyebrow rather than a laugh. Eight variations because of how often it fires.
-
-| File | Line |
-| --- | --- |
-| `death-01.wav` | "Oh dear. You are dead." |
-| `death-02.wav` | "Well. That happened." |
-| `death-03.wav` | "And there goes the loot." |
-| `death-04.wav` | "Hm. Not your finest work." |
-| `death-05.wav` | "You'll get it next time. Probably." |
-| `death-06.wav` | "That one's going to sting." |
-| `death-07.wav` | "Back to Lumbridge, then." |
-| `death-08.wav` | "Nothing unlucky about that one." |
-
-## `quest` — sometimes
-
-> In game: the quest completion scroll opens
-
-Warm and genuine. A quest can be hours of work finishing, so this one earns a real note of
-congratulation.
-
-| File | Line |
-| --- | --- |
-| `quest-01.wav` | "Quest complete." |
-| `quest-02.wav` | "Another one down." |
-| `quest-03.wav` | "That's the quest finished. Nicely done." |
-| `quest-04.wav` | "Quest points well earned." |
-| `quest-05.wav` | "Look at that. Done." |
-
-## `level-up` — often
-
-> In game: `Congratulations, you've just advanced your Attack level.`
-
-Light and quick. By default it only fires every tenth level, so it can land as a small nod
-rather than a fanfare.
-
-| File | Line |
-| --- | --- |
-| `level-up-01.wav` | "Level up." |
-| `level-up-02.wav` | "Nice one." |
-| `level-up-03.wav` | "Another level in the bank." |
-| `level-up-04.wav` | "You're getting good at this." |
-| `level-up-05.wav` | "That's a new level." |
-| `level-up-06.wav` | "Progress." |
+| Event | Folder | Heard |
+| --- | --- | --- |
+| Death | `death` | Constantly |
+| Quest complete | `quest` | Sometimes |
+| Level up | `level-up` | Often |
+| Level 99 | `level-99` | Rarely |
+| Pet drop | `pet` | Very rarely |
+| Personal best | `personal-best` | Sometimes |
+| Clue scroll | `clue` | Often |
+| Slayer task | `slayer` | Often |
+| Achievement diary | `diary` | Sometimes |
+| Combat achievement | `combat-task` | Often |
+| Collection log | `collection-log` | Often |
+| Valuable drop | `valuable-drop` | Off by default |
+| Login greeting | `login` | Off by default |
 
 ---
 
-# Sitting two — the rarer moments
+# Pack 1 — Polite
 
-Forty-one lines. No rush: each event stays silent until it has a clip, so they can arrive
-whenever.
+Warm, sincere, encouraging. Never sarcastic. A kind friend watching you play.
 
-## `pet` — very rarely
-
-> In game: `You have a funny feeling like you're being followed.`
-
-The rarest thing on this list; people hunt these for weeks. Genuine disbelief and delight. This
-is the one place to go big, and worth the best takes.
-
-| File | Line |
+| Event | Lines |
 | --- | --- |
-| `pet-01.wav` | "A pet! Finally!" |
-| `pet-02.wav` | "No way. The pet dropped." |
-| `pet-03.wav` | "You got the pet!" |
-| `pet-04.wav` | "After all that... a pet." |
-| `pet-05.wav` | "There it is! The pet!" |
+| Death | "Oh no. Are you alright?" <br> "That's alright. It happens to everyone." <br> "Don't worry about it. Try again." <br> "Unlucky. You'll get there." <br> "Chin up. You were doing well." |
+| Quest | "Quest complete. Well done." <br> "Congratulations. That's finished." <br> "Lovely work." |
+| Level up | "Level up. Well done." <br> "That's another one. Good going." <br> "Nicely done." |
+| Level 99 | "Ninety-nine! Congratulations, truly." <br> "That's a skill cape. You've earned it." <br> "Wonderful. All that effort paid off." |
+| Pet | "A pet! How lovely!" <br> "Oh, congratulations! You got the pet!" <br> "How wonderful. Look at it." |
+| Personal best | "A new personal best. Well done." <br> "That's your fastest yet." <br> "Lovely time." |
+| Clue | "Clue complete. Nicely done." <br> "Treasure Trail finished." <br> "I hope it's something good." |
+| Slayer | "Task complete. Well done." <br> "That's finished. Off you go." <br> "Good work." |
+| Diary | "Diary complete. Well done." <br> "That's all the tasks finished." <br> "Lovely. All done." |
+| Combat | "Combat task complete." <br> "Well fought." <br> "That's another one. Good work." |
+| Collection log | "A new collection log slot. How nice." <br> "That's a new one. Lovely." <br> "Your log's coming along." |
+| Valuable drop | "Oh, that's valuable." <br> "A good drop." <br> "That's worth keeping." |
+| Login | "Welcome back. Lovely to see you." <br> "Hello again." <br> "Good to have you back." |
 
-## `level-99` — rarely
+---
 
-> In game: a skill reaches level 99
+# Pack 2 — Flirty
 
-A 99 can be weeks of effort. These only play if they exist; otherwise a 99 gets an ordinary
-level-up line. Real delight here.
+Charmed and a bit too interested. Low, unhurried delivery. Never shouts.
 
-| File | Line |
+| Event | Lines |
 | --- | --- |
-| `level-99-01.wav` | "Ninety-nine! Congratulations." |
-| `level-99-02.wav` | "That's a skill cape. Go and get it." |
-| `level-99-03.wav` | "Maxed. Genuinely well done." |
-| `level-99-04.wav` | "Ninety-nine. All that work paid off." |
+| Death | "Dying for attention? It's working." <br> "I'd have saved you. This was more fun." <br> "Come back soon. I get bored." <br> "Aw. Come here." <br> "Careless. I like that in a person." |
+| Quest | "Clever and persistent. I like that." <br> "Finished already? Impressive." <br> "Mm. Capable." |
+| Level up | "Growth. Attractive." <br> "Getting stronger. I noticed." <br> "Mm. Do that again." |
+| Level 99 | "Ninety-nine. Okay, that's genuinely hot." <br> "Maxed. Say that again, slowly." <br> "Skill cape. Wear it for me." |
+| Pet | "A pet! You lucky thing!" <br> "Oh, you got the pet. I'm so proud." <br> "Look at it. Look at you." |
+| Personal best | "Personal best. Fast hands." <br> "Quick. I like quick." <br> "That was fast. Suspiciously fast." |
+| Clue | "Treasure. My favourite." <br> "Open it. Slowly." <br> "Let's see what you've got." |
+| Slayer | "Efficient. I like efficient." <br> "Dangerous, aren't you." <br> "Task done. You're good at this." |
+| Diary | "Thorough. Very thorough." <br> "All done. Show-off." <br> "You finish what you start. Noted." |
+| Combat | "Brutal. I'm into it." <br> "Nice kill." <br> "Showing off for me?" |
+| Collection log | "Another slot. Obsessive, aren't you." <br> "Ooh. New one." <br> "Your log's getting full. Impressive." |
+| Valuable drop | "Ooh. Expensive." <br> "Rich, are we?" <br> "That's worth something. So are you." |
+| Login | "There you are. I was waiting." <br> "Missed me?" <br> "Back again. Good." |
 
-## `personal-best` — sometimes
+---
 
-> In game: `Fight duration: 1:23. Personal best: 1:20.`
+# Pack 3 — Funny
 
-Impressed and energetic. Someone just had their fastest run at something.
+Deadpan comedian. Jokes about the game and the grind, not about the player.
 
-| File | Line |
+| Event | Lines |
 | --- | --- |
-| `personal-best-01.wav` | "New personal best!" |
-| `personal-best-02.wav` | "That's a personal best. Fast." |
-| `personal-best-03.wav` | "Quickest one yet." |
-| `personal-best-04.wav` | "Personal best. Very nice." |
+| Death | "Oh dear. You are dead." <br> "And that's why we can't have nice things." <br> "Bold strategy. Didn't work." <br> "You know you can run, right?" <br> "I'm legally obliged to mention that you died." |
+| Quest | "Quest complete. Nine hours. For a hat." <br> "Congratulations. The reward is more quests." <br> "Done. Jagex thanks you for your service." |
+| Level up | "Level up. Number go up." <br> "Ding." <br> "Statistically, you're slightly better now." |
+| Level 99 | "Ninety-nine! Go outside! ...No, wait." <br> "Maxed. Your family misses you." <br> "Skill cape! A real hat for a fake job." |
+| Pet | "A pet! It does nothing! It's perfect!" <br> "You got the pet! The RNG has forgiven you!" <br> "A pet! Now it follows you forever. Like debt." |
+| Personal best | "Personal best! Nobody else cares, but I do." <br> "New record. For you. Specifically you." <br> "Fastest yet. Put it on your CV." |
+| Clue | "Clue done. Please be a nice item. Please." <br> "Treasure Trail finished. It's gonna be a bucket." <br> "Open it. Manage your expectations." |
+| Slayer | "Task complete. Thousands dead. No regrets." <br> "Done. The ecosystem is ruined." <br> "Task finished. Go ask for a worse one." |
+| Diary | "Diary done. Did you enjoy any of it?" <br> "All tasks complete. You may now be smug." <br> "Diary finished. The real reward was the chores." |
+| Combat | "Combat task done. Violence works." <br> "Achievement unlocked: hitting things." <br> "Another one! You're basically employed." |
+| Collection log | "New log slot! The spreadsheet grows." <br> "Added to the log. Which nobody will see." <br> "A new one! Collect them all! Please stop." |
+| Valuable drop | "Ooh. Rent money." <br> "That's valuable. Don't lose it." <br> "Money! Finally!" |
+| Login | "Welcome back. The grind missed you." <br> "You're back. Suspicious." <br> "Logging in. Say goodbye to your evening." |
 
-## `clue` — often
+---
 
-> In game: `You have completed 12 medium Treasure Trails.`
+# Pack 4 — Mocking
 
-Curious, anticipating. About to find out what is in the reward casket.
+Condescending and unimpressed. Roast the gameplay, never the person. Bored and flat lands
+harder than angry.
 
-| File | Line |
+| Event | Lines |
 | --- | --- |
-| `clue-01.wav` | "Clue complete." |
-| `clue-02.wav` | "Treasure Trail finished." |
-| `clue-03.wav` | "Let's see what's inside." |
-| `clue-04.wav` | "That's the clue done." |
+| Death | "Dead. Obviously." <br> "I saw that coming from a mile away." <br> "Was that the plan? Genuinely?" <br> "Incredible. You've failed upward into a graveyard." <br> "Shall I explain what went wrong, or shall we pretend?" |
+| Quest | "Quest complete. Only took you forever." <br> "Finally. A child could have done that faster." <br> "Finished. I'd clap, but I've seen better." |
+| Level up | "One level. Congratulations, I suppose." <br> "Oh. A level. How thrilling." <br> "Progress. Glacial, but progress." |
+| Level 99 | "Ninety-nine. Imagine what you could have done with that time." <br> "Maxed. In a video game. Well done." <br> "A skill cape. Your parents must be thrilled." |
+| Pet | "A pet? You? The universe has made an error." <br> "You got the pet. Pure luck. Zero skill." <br> "A pet. Don't let it see you play." |
+| Personal best | "A personal best. Emphasis on personal." <br> "Your fastest. Still slow." <br> "New record. Low bar, but a record." |
+| Clue | "Clue done. Let's watch you get a bucket." <br> "Treasure Trail finished. Finally." <br> "Open it. Prepare for disappointment." |
+| Slayer | "Task complete. Took you long enough." <br> "Done. Barely." <br> "Finished. Try being quicker next time." |
+| Diary | "Diary complete. Chores. You did chores." <br> "All done. Riveting stuff." <br> "Finished the tasks. A toddler's checklist." |
+| Combat | "Combat task. The easy one, I assume." <br> "Done. Somehow." <br> "Another one. Don't get cocky." |
+| Collection log | "A new slot. Only nine hundred to go." <br> "Added. Your log is still embarrassing." <br> "One more. At this rate, never." |
+| Valuable drop | "Valuable. Try not to lose it." <br> "Money. Don't spend it badly." <br> "A good drop. Wasted on you." |
+| Login | "Oh. You're back." <br> "Here we go again." <br> "Logged in. Lower your expectations." |
 
-## `slayer` — often
+---
 
-> In game: `You have completed your task!`
+## Shipping more than one pack
 
-Efficient, onto-the-next. Slayer is a grind and the player is already walking back for another
-assignment.
+The plugin currently pools every clip in an event folder and picks at random, which is right for
+one pack and wrong for two: install polite and mocking together and they alternate, which reads
+as a bug rather than variety.
 
-| File | Line |
-| --- | --- |
-| `slayer-01.wav` | "Task complete." |
-| `slayer-02.wav` | "Slayer task done." |
-| `slayer-03.wav` | "That's the task finished. Go get another." |
-| `slayer-04.wav` | "Done. Next one." |
-
-## `diary` — sometimes
-
-> In game: `Well done! You have completed all of the easy tasks in the Varrock area.`
-
-Satisfied and matter-of-fact. Ticking a box on a long list.
-
-| File | Line |
-| --- | --- |
-| `diary-01.wav` | "Diary complete." |
-| `diary-02.wav` | "That's the diary done." |
-| `diary-03.wav` | "Another set of tasks ticked off." |
-| `diary-04.wav` | "All done in that area." |
-
-## `combat-task` — often
-
-> In game: `Congratulations, you've completed a hard combat task: Kill the Kalphite Queen.`
-
-Brisk and approving. These arrive in runs of three or four, so keep them clipped.
-
-| File | Line |
-| --- | --- |
-| `combat-task-01.wav` | "Combat task complete." |
-| `combat-task-02.wav` | "That's another one down." |
-| `combat-task-03.wav` | "Combat achievement. Nice." |
-| `combat-task-04.wav` | "Ticked off." |
-
-## `collection-log` — often
-
-> In game: `New item added to your collection log: Abyssal whip`
-
-Quietly pleased, understated. A good drop fills two or three slots at once, so these need to sit
-politely next to each other.
-
-| File | Line |
-| --- | --- |
-| `collection-log-01.wav` | "New collection log slot." |
-| `collection-log-02.wav` | "That's a new one for the log." |
-| `collection-log-03.wav` | "Another slot filled." |
-| `collection-log-04.wav` | "The log's looking better." |
-
-## `valuable-drop` — off by default
-
-> In game: `Valuable drop: Dragon bones (2,900 coins)`
-
-Very short and low-key, almost offhand. Fires often enough that it ships switched off, so these
-are the least important four on the list.
-
-| File | Line |
-| --- | --- |
-| `valuable-drop-01.wav` | "Valuable drop." |
-| `valuable-drop-02.wav` | "Ooh. That's worth something." |
-| `valuable-drop-03.wav` | "Nice drop." |
-| `valuable-drop-04.wav` | "Worth picking up." |
-
-## `login` — off by default
-
-> In game: the player logs in
-
-Relaxed, like greeting someone at the door. The first thing said each session, so nothing too
-bright.
-
-| File | Line |
-| --- | --- |
-| `login-01.wav` | "Welcome back." |
-| `login-02.wav` | "Back for more, then." |
-| `login-03.wav` | "Let's get to it." |
-| `login-04.wav` | "Right. Where were we?" |
+Releasing a second pack therefore needs pack folders plus a setting to choose the active one.
+Not yet built.
