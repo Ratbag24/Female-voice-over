@@ -1,0 +1,12 @@
+# Clips shipped inside the jar, one path per line, relative to this folder.
+#
+# A jar cannot be listed like a directory, so ClipLibrary reads this index instead.
+# Add a line here for every .wav committed under src/main/resources/com/femalevoiceover/sounds/.
+#
+# Example, once the recordings land:
+#   death/01-oh-dear.wav
+#   death/02-that-went-well.wav
+#   quest/01-quest-complete.wav
+#
+# Clips a player puts in their own audio folder replace the bundled ones for that event,
+# so listing a clip here does not stop anyone overriding it.
