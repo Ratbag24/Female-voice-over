@@ -5,12 +5,14 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Random;
@@ -326,6 +328,78 @@ public class CoreTest
 		{
 			assertNotNull(event.folder(), VoiceEvent.byFolder(event.folder()));
 			assertEquals(event, VoiceEvent.byFolder(event.folder()));
+		}
+	}
+
+	// ------------------------------------------------- playback error reporting
+
+	/**
+	 * The failures below are reported before any audio line is acquired, so these assertions
+	 * hold whether or not the machine running them has a sound card.
+	 */
+	@Test
+	public void aFileThatIsNotAudioBlamesTheFileFormat() throws IOException
+	{
+		File root = folder.newFolder("audio");
+		File bad = new File(root, "death/notes.wav");
+		assertTrue(bad.getParentFile().mkdirs());
+		try (PrintWriter out = new PrintWriter(bad))
+		{
+			out.println("this is text wearing a .wav extension");
+		}
+
+		SoundPlayer player = new SoundPlayer();
+		try
+		{
+			player.play(Clip.of(bad), 70, true);
+			fail("a text file should not have played");
+		}
+		catch (ClipException e)
+		{
+			assertTrue(e.getMessage(), e.getMessage().contains("not an audio format"));
+		}
+		finally
+		{
+			player.close();
+		}
+	}
+
+	@Test
+	public void aMissingBundledClipBlamesTheDisk()
+	{
+		SoundPlayer player = new SoundPlayer();
+		try
+		{
+			player.play(Clip.bundled("/com/femalevoiceover/sounds/death/absent.wav"), 70, true);
+			fail("a clip that is not in the jar should not have played");
+		}
+		catch (ClipException e)
+		{
+			assertTrue(e.getMessage(), e.getMessage().contains("from disk"));
+		}
+		finally
+		{
+			player.close();
+		}
+	}
+
+	@Test
+	public void volumeZeroPlaysNothingAtAll() throws ClipException, IOException
+	{
+		File root = folder.newFolder("audio");
+		File bad = new File(root, "death/notes.wav");
+		assertTrue(bad.getParentFile().mkdirs());
+		assertTrue(bad.createNewFile());
+
+		// Muted: the clip is never opened, so even an unreadable file cannot fail.
+		SoundPlayer player = new SoundPlayer();
+		try
+		{
+			player.play(Clip.of(bad), 0, true);
+		}
+		finally
+		{
+			player.close();
 		}
 	}
 

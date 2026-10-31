@@ -53,21 +53,45 @@ public class SoundPlayer implements AutoCloseable
 			BufferedInputStream buffered = new BufferedInputStream(raw);
 			AudioInputStream audio = AudioSystem.getAudioInputStream(buffered))
 		{
-			line = AudioSystem.getClip();
-			line.open(audio);
+			// Acquiring the line and reading the file fail for unrelated reasons, and saying
+			// "could not read your recording" when the real problem is a missing sound card
+			// sends people off re-encoding perfectly good files.
+			try
+			{
+				line = AudioSystem.getClip();
+			}
+			catch (IllegalArgumentException | LineUnavailableException e)
+			{
+				throw new ClipException("This system has no audio output available, so "
+					+ clip.name() + " could not play. The recording itself is fine.", e);
+			}
+
+			try
+			{
+				line.open(audio);
+			}
+			catch (LineUnavailableException e)
+			{
+				line.close();
+				throw new ClipException("The audio device was busy, so " + clip.name()
+					+ " could not play.", e);
+			}
+			catch (IllegalArgumentException e)
+			{
+				line.close();
+				throw new ClipException(clip.name() + " is " + audio.getFormat()
+					+ ", which this system's audio device will not accept."
+					+ " Re-save it as 16-bit PCM .wav.", e);
+			}
 		}
 		catch (UnsupportedAudioFileException e)
 		{
-			throw new ClipException(clip.name() + " is not a format this system can play."
-				+ " Re-save it as 16-bit PCM .wav.", e);
+			throw new ClipException(clip.name() + " is not an audio format that can be read."
+				+ " Re-save it as 16-bit PCM .wav. MP3 and OGG do not work.", e);
 		}
-		catch (LineUnavailableException e)
+		catch (IOException e)
 		{
-			throw new ClipException("No audio line was free to play " + clip.name() + ".", e);
-		}
-		catch (IOException | IllegalArgumentException e)
-		{
-			throw new ClipException("Could not read " + clip.name() + ".", e);
+			throw new ClipException("Could not read " + clip.name() + " from disk.", e);
 		}
 
 		applyVolume(line, volumePercent);
