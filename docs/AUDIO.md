@@ -9,7 +9,7 @@ The plugin plays whatever `javax.sound.sampled` opens with no extra codecs on th
 
 | Extension | Notes |
 | --- | --- |
-| `.wav` | Use this. 44100 Hz, 16-bit PCM. |
+| `.wav` | Use this. 16-bit PCM, 44100 or 48000 Hz. |
 | `.au`, `.aif`, `.aiff` | Work, but there is no reason to prefer them. |
 
 **MP3, OGG, FLAC and M4A do not play.** Nothing in a stock Java runtime decodes them. Converting is

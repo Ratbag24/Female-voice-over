@@ -11,9 +11,10 @@ improvises in the booth beats one written here.
 
 | | |
 | --- | --- |
-| **Format** | `.wav`, 16-bit PCM, 44100 Hz, mono. Most recorders call this CD quality. Not MP3 — it will not play. |
+| **Format** | `.wav`, 16-bit PCM, mono. 44100 or 48000 Hz — either plays fine, so there is no need to resample. Not MP3: it will not play at all. |
 | **Length** | Under four seconds a line. Shorter is better. |
-| **Level** | Same distance from the mic and the same level for every line, start to finish. There is one volume control for the whole pack, so a quietly recorded line stays quiet. |
+| **Level** | Keep the mic at one distance and leave the input gain alone once it is set. Aim for peaks near -6 dBFS. Anything touching 0 clips, and clipping is the one fault that cannot be repaired afterwards. Matching loudness between lines is not your job — the pack gets normalised as a whole. |
+| **Pacing** | Say each line straight through. Keep any pause inside a line to roughly 0.2 s — a long beat mid-sentence reads as lag in game, not as delivery. Most lines land under 2 s. |
 | **Trim** | Cut the silence off the front of each file. Dead air at the start is what makes this kind of plugin feel broken. |
 | **Naming** | Anything legible. `death-01.wav`, `flirty-death-1.wav` — whatever is easy, as long as the event is in the name. |
 | **Sending** | All in one batch. Folders are not needed. |
