@@ -42,6 +42,14 @@ public final class ChatTriggers
 			return VoiceEvent.COLLECTION_LOG;
 		}
 
+		// "Congratulations, you've completed a quest: Cook's Assistant". Checked before the
+		// other "completed a ..." lines, and ahead of the quest interface, which only tells us
+		// a quest finished because of an interface id that could be renumbered.
+		if (message.contains("completed a quest"))
+		{
+			return VoiceEvent.QUEST;
+		}
+
 		// "Congratulations, you've completed a hard combat task: ..."
 		if (message.contains("combat task"))
 		{

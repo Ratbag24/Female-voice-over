@@ -38,7 +38,11 @@ public class FemaleVoiceOverPlugin extends Plugin
 	/** Folder under .runelite that recordings are read from. */
 	private static final String AUDIO_FOLDER = "female-voiceover";
 
-	/** The quest completion scroll. A quest is finished when this interface opens. */
+	/**
+	 * The quest completion scroll. A backstop only: quests are detected from the chat message,
+	 * which is what C Engineer Completed uses and does not depend on an interface id staying
+	 * put. Both firing is harmless, since one line per event per {@link #DEBOUNCE_MS} wins.
+	 */
 	private static final int QUEST_COMPLETED_GROUP_ID = 153;
 
 	/**

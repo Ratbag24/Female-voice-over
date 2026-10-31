@@ -54,6 +54,21 @@ public class CoreTest
 	}
 
 	@Test
+	public void matchesQuestCompletionFromChat()
+	{
+		assertEquals(VoiceEvent.QUEST, ChatTriggers.match(
+			"Congratulations, you've completed a quest: Cook's Assistant"));
+	}
+
+	@Test
+	public void questMessageIsNotConfusedWithOtherCompletions()
+	{
+		assertEquals(VoiceEvent.COMBAT_TASK, ChatTriggers.match(
+			"Congratulations, you've completed a hard combat task: Kill the Kalphite Queen."));
+		assertEquals(VoiceEvent.SLAYER, ChatTriggers.match("You have completed your task!"));
+	}
+
+	@Test
 	public void matchesCombatAchievementRatherThanSlayer()
 	{
 		assertEquals(VoiceEvent.COMBAT_TASK, ChatTriggers.match(

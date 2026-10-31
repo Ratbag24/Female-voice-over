@@ -98,8 +98,8 @@ updates. Two are not:
 
 - **Death** comes from the client's actor-death event, with the "Oh dear, you are dead!" message as
   a second route. Both arriving is fine — one line per event per three seconds.
-- **Quest complete** comes from the quest completion interface opening (group 153). If Jagex ever
-  renumbers that interface, quest lines stop firing and nothing else is affected.
+- **Quest complete** comes from the "Congratulations, you've completed a quest:" message, with
+  the quest completion interface (group 153) as a backstop in case the wording changes.
 
 Level ups are read from the "you've just advanced your" message rather than from skill changes,
 because the client replays every skill on login and a replay is indistinguishable from a real level.
